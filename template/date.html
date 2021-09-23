@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        table, th, td {
+            border:1px solid black;
+            width:33%;
+            margin-left: auto;
+            margin-right: auto;
+          }
+    </style>
+<head>
+    <title>MPG prediction usecase</title>
+</head>
+<body style="background-color:rgb(198, 240, 212);">
+    <h1>the result is:{{count}}</h1>
+    
+    <!--declare table-->
+    <table summary="no_orderDate" bgcolor=#ffb3b3>
+        <tr>
+            <th>FIRST NAME</th>
+            <th>EMP_NO</th>
+            <th>
+                <!--creating a form having button which will reorder the table ascendingly-->
+                <form method="POST" enctype="multipart/form-data" action="order">
+                    {% csrf_token %}
+                    <button name="hire_date" type="submit" value="hire_date">
+                        <h1>hiredate</h1>
+                    </button>
+                </form>
+            </th>
+        </tr>
+        {% for i,j,k in mylist %}
+                <tr><td>{{i}}</td><td>{{j}}</td><td>{{k}}</td></tr>   
+        {% endfor %}
+    </table>
+</body>
+</html>

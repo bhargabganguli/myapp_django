@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MPG prediction usecase</title>
+    <style>
+        .col-md-4 {
+            background-color: pink;
+            color: black;
+            border: 2px solid brown;
+            margin: 20px;
+            padding: 20px;
+          }
+          .float-container {
+            border: 3px solid #fff;
+            padding: 20px;
+            }
+    </style>
+</head>
+<body style="background-color:grey;">
+    
+    {{a}}
+    <h2>get details of your employee</h2>
+
+    <h3>ENTER DETAILS</h3>
+    <br>
+<div class="float-container" style="float: left;max-height: 300px;max-width: 900px;overflow: scroll">
+	<h1>GET DETAILS BY EMP NO</h1>
+    <form method="POST" enctype="multipart/form-data" action="emp_id">
+    {% csrf_token %}
+    <div class="col-md-4 col-sm-4"><label for="fname">emp_no:</label> </div> <input name="emp_no" type="text" value=1><br><br>
+    <!--<div class="col-md-4 col-sm-4"><label for="lname">gender:</label> </div> <input type="text" id="lname" name="gender" value=2><br><br>
+    <div class="col-md-4 col-sm-4"><label for="lname">fromdate:</label> </div> <input type="text" id="lname" name="fromdate" value=3><br><br> 
+    -->
+    <br>
+    <input type="submit" value="go" >
+</form>
+</div>
+<br>
+
+<div class="float-container" style="max-height: 300px;max-width: 900px;overflow: scroll">
+	<h2>get details BY RANGE</h2>
+    <form method="POST" enctype="multipart/form-data" action="hire_date">
+    {% csrf_token %}
+    <!--<div class="col-md-4 col-sm-4"><label for="fname">emp_no:</label> </div> <input name="emp_no" type="text" value=1><br><br>
+    -->
+    <div class="col-md-4 col-sm-4"><label for="lname">gender:</label> </div> <input type="text" id="lname" name="gender" value=M><br><br>
+    <div class="col-md-4 col-sm-4"><label for="lname">hiredate:</label> </div> <input type="date" id="lname" name="hiredate" value=><br><br> 
+    
+    <label for="filter">FILTER:</label>
+    <select name="filter" id="cars">
+        <option value="<=">FROM & BEFORE</option>
+        <option value="<">BEFORE</option>
+        <option value=">=">FROM & AFTER</option>
+        <option value=">">AFTER</option>
+        <option value="=">ON THAT DAY</option>
+    </select>
+
+    <br>
+    <input type="submit" value="go" >
+</form>
+</div>
+
+</body>
+</html>
